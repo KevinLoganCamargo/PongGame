@@ -49,22 +49,37 @@ class Ball:
         pos = self.canvas.coords(self.id)
 
         if pos[1] <= 0:
-            self.y = 3
+            if level==1 or level==2:
+                self.y=3*level
+            elif level==3 or level==4 or level==5:
+                self.y =2*level
 
         if pos[3] >= self.canvas_height:
-            self.y = -3
+            if level==1 or level==2:
+                self.y=-3*level
+            elif level==3 or level==4 or level==5:
+                self.y = -2*level
 
         if pos[0] <= 0:
-            self.x = 3
+            if level==1 or level==2:
+                self.x=3*level
+            elif level==3 or level==4 or level==5:
+                self.x = 2*level
 
         if pos[2] >= self.canvas_width:
-            self.x = -3
+            if level==1 or level==2:
+                self.x=-3*level
+            elif level==3 or level==4 or level==5:
+                self.x = -2*level
 
         self.Barra_pos = self.canvas.coords(self.Barra.id)
 
         if pos[2] >= self.Barra_pos[0] and pos[0] <= self.Barra_pos[2]:
             if pos[3] >= self.Barra_pos[1] and pos[3] <= self.Barra_pos[3]:
-                self.y = -3
+                if level == 1 or level == 2:
+                    self.y = -3 * level
+                elif level == 3 or level == 4 or level == 5:
+                    self.y = -2 * level
                 global count
                 count += 1
                 score()
@@ -108,11 +123,17 @@ class Barra:
 
     def move_left(self, event):
         if self.pos[0] >= 0:
-            self.x = -3
+            if level==1 or level==2:
+                self.x=-3*level
+            elif level==3 or level==4 or level==5:
+                self.x = -2*level
 
     def move_right(self, event):
         if self.pos[2] <= self.canvas_width:
-            self.x = 3
+            if level==1 or level==2:
+                self.x=3*level
+            elif level==3 or level==4 or level==5:
+                self.x=2*level
 
 
 def start_game(event):
