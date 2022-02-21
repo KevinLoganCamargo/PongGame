@@ -3,7 +3,7 @@ import random
 import time
 
 level=int(input('Digite em que nível deseja jogar 1/2/3/4/5\n'))
-length=400/level
+length=420/level
 
 root=Tk()
 root.title('PONG')
@@ -148,7 +148,7 @@ def game_over():
     canvas.itemconfig(game, text="Game over!")
 
 Bar = Bar(canvas, "blue")
-Ball = Ball(canvas, Barra, "red")
+Ball = Ball(canvas, Barra, "green")
 
 score_now = canvas.create_text(430, 20, text="Pontos: " + str(count), fill="green", font=("Arial", 16))
 game = canvas.create_text(400, 300, text=" ", fill="red", font=("Arial", 40))
